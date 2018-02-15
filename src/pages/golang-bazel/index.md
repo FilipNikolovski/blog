@@ -1,5 +1,5 @@
 ---
-path: /golang-monorepo-bazel
+path: /managing-go-monorepo-with-bazel
 date: 2018-01-29
 title: Managing a Go monorepo with Bazel
 tags:
@@ -9,7 +9,7 @@ tags:
   - bazel
 ---
 
-At InPlayer, we have a platform that is built using a *microservice* architectural style which basically structures an application as a collection of many different services. In this post I will talk about how we structure, build and deploy our Go applications.
+At [InPlayer](https://inplayer.com/), we have a platform that is built using a *microservice* architectural style which basically structures an application as a collection of many different services. In this post I will talk about how we structure, build and deploy our Go applications.
 
 Every bit of Go code that we write, resides in a single Git repository - A monorepo. Since every library and service is in a single project, it allows us to make cross cutting changes without the need of some external package management tools. Basically it is impossible for the code to be out of sync and each change that we make can be considered as a single unit.
 

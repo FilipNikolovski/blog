@@ -1,6 +1,6 @@
 import React from 'react'
 
-// import profilePic from './profile-pic.jpg'
+import profilePic from './profilePic.jpg'
 
 class Bio extends React.Component {
   render() {
@@ -8,21 +8,25 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
-          marginBottom: '1rem',
+          marginBottom: '2.5rem',
+          maxWidth: 850,
+          margin: '0 auto'
         }}
       >
         <img
-          // src={profilePic}
+        src={profilePic}
           alt={`Filip Nikolovski`}
           style={{
-            marginRight: '0.2rem',
+            marginRight: '0.9rem',
             marginBottom: 0,
-            width: '0.5rem',
-            height: '0.5rem',
+            width: '3.5rem',
+            height: '3.5rem',
+            borderRadius: '50%'
           }}
         />
         <p>
-          Programmer
+          Hi, my name is Filip and I am a software engineer, currently working at <a href="https://inplayer.com/">inplayer</a>. This blog is mostly about 
+          programming, technology and open-source stuff.
         </p>
       </div>
     )

@@ -2,15 +2,16 @@
 
 import React from "react";
 import Link from "gatsby-link";
-import Bio from '../components/Bio';
 
 // import '../css/index.css'; // add some style if you want!
+
+import Bio from '../components/Bio'
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
-      <Bio/>
+      <Bio />
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
@@ -39,7 +40,6 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
-            tags
           }
         }
       }
