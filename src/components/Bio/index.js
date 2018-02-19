@@ -8,9 +8,9 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
+          margin: '0 auto',
           marginBottom: '2.5rem',
-          maxWidth: 850,
-          margin: '0 auto'
+          maxWidth: 850
         }}
       >
         <img

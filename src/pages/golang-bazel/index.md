@@ -1,12 +1,7 @@
 ---
 path: /managing-go-monorepo-with-bazel
-date: 2018-01-29
+date: 2018-02-19
 title: Managing a Go monorepo with Bazel
-tags:
-  - golang
-  - go
-  - monorepo
-  - bazel
 ---
 
 At [InPlayer](https://inplayer.com/), we have a platform that is built using a *microservice* architectural style which basically structures an application as a collection of many different services. In this post I will talk about how we structure, build and deploy our Go applications.
