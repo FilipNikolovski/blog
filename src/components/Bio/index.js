@@ -2,6 +2,16 @@ import React from 'react'
 
 import profilePic from './profilePic.jpg'
 
+
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "#999"
+}
+
 class Bio extends React.Component {
   render() {
     return (
@@ -9,7 +19,6 @@ class Bio extends React.Component {
         style={{
           display: 'flex',
           margin: '0 auto',
-          marginBottom: '2.5rem',
           maxWidth: 850
         }}
       >
@@ -25,8 +34,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Hi, my name is Filip and I am a software engineer, currently working at <a href="https://inplayer.com/">inplayer</a>. This blog is mostly about 
-          programming, technology and open-source stuff.
+          Hi, my name is Filip and I am a software engineer, currently working at <a style={{textDecoration: "none", color: "rgba(82,206,176,0.9)"}} href="https://inplayer.com/">InPlayer</a>. This blog is mostly about 
+          programming, technology and open-source stuff. Opinions are my own, not necessarily those of my employer.
         </p>
       </div>
     )

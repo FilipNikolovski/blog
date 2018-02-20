@@ -6,12 +6,14 @@ import Link from "gatsby-link";
 // import '../css/index.css'; // add some style if you want!
 
 import Bio from '../components/Bio'
+import AboutLinks from '../components/AboutLinks'
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
       <Bio />
+      <AboutLinks/>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {

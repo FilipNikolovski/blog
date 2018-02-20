@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     author: 'Filip Nikolovski',
-    title: 'Catchy blog name about programming',
+    title: "Filip's blog",
+    siteUrl: `https://filipnikolovski.com`,
+    description: "Blog about programming stuff"
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -23,5 +25,8 @@ module.exports = {
         anonymize: true
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`
+    }
   ],
 };
