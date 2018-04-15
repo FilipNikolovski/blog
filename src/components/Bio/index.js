@@ -19,7 +19,8 @@ class Bio extends React.Component {
         style={{
           display: 'flex',
           margin: '0 auto',
-          maxWidth: 850
+          maxWidth: 850,
+          //padding: '1rem'
         }}
       >
         <img
