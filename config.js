@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://filipnikolovski.com',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Blog by Filip Nikolovski',
+  subtitle: 'Blog about programming, technology and open-source stuff.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-114259645-1',
   useKatex: false,
   menu: [
     {
@@ -18,31 +18,17 @@ module.exports = {
     {
       label: 'About me',
       path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
     }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Filip Nikolovski',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'This blog is mostly about programming, technology and open-source stuff.',
     contacts: {
-      email: '',
-      facebook: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '',
-      vkontakte: '',
-      linkedin: '#',
-      instagram: '#',
-      line: '',
-      gitlab: '',
-      weibo: '',
-      codepen: '',
-      youtube: ''
+      email: 'me@filipnikolovski.com',
+      twitter: 'fffiiicc',
+      github: 'FilipNikolovski',
+      rss: '/rss.xml'
     }
   }
 };
