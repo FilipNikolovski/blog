@@ -38,7 +38,7 @@ Making changes in multiple services at once does not mean you get to deploy thos
 
 Instead of the scenario above, we should let the caller services choose the version they want to depend on and gradually introduce new changes:
 
-<img src="/media/services_versions_3.png" alt="services v3" />
+<img src="/media/services_versions_3.png" alt="services v3" width=450 />
 
 ## Two-step deployment strategy
 
