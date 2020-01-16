@@ -30,13 +30,21 @@ Deployment of such an architecture can present additional challenges. Services m
 
 Furthermore, **monorepos** have become an increasingly popular software development strategy, where code for many (or all) projects, resides in the same repository which in turn has made code refactoring much easier due to the code being in one big repository and has enabled engineers to make cross-cutting changes in multiple services in a single commit. This can lead to a misconception of believing that these changes are atomic, similar to making changes in a monolithic application.
 
-Making changes in multiple services at once does not mean you get to deploy those services in the same time as one single unit, and can break the behavior of your system during the transition from one version to the other.
+Making changes in multiple services at once does not mean you get to deploy those services in the same time as one single unit, and can break the behavior of your system during the transition from one version to the other. 
+
+ |
+---|---
+<img src="/media/services_versions_1.png" alt="services v1" width=400/>|<img src="/media/services_versions_2.png" width=400/>
+
+Instead of the scenario above, we should let the caller services choose the version they want to depend on and gradually introduce new changes:
+
+<img src="/media/services_versions_3.png" alt="services v3" />
 
 ## Two-step deployment strategy
 
-The most common pitfall when making changes to a system, is the modification in behavior or protocol of a service. We can demonstrate this with a simple example. 
+The most common pitfall when making changes to a system, is the modification in behavior or protocol of a service (as we've shown above). We can demonstrate this further with a simple example. 
 
-Let's create a scenario, involving a service - we'll call it **Metadata**. The service can store and provide data in a key value format to other services. Let's say we designed the Metadata service to provide the data as a JSON object with key/value pairs. Example:
+Let's create a scenario, involving a service - we'll call it **Metadata**, which can store and provide data in a key value format to other services. Let's say we designed the Metadata service to provide the data as a JSON object with key/value pairs. Example:
 
 ```json
 {
@@ -91,7 +99,7 @@ We can use a strategy that involves deploying our services in two steps. In the 
 } 
 ```
 
-After we deploy the new version of Metadata, the second step involves updating all of the other services that depend on reading the newly provided data. This way we can be sure that we won't break the functionality of our system.
+After we deploy the new version of Metadata, the second step involves updating all of the other services that depend on reading the new version of the data. This way we can be sure that we won't break the functionality of our system.
 
 ### Backwards compatibility
 
@@ -101,6 +109,12 @@ At every revision of the code for each application, make sure to test and verify
 
 This type of "two-step" deployment strategy can be applied to similar scenarios that involve some kind of change in behavior in our services, whether if it's refactoring tables in a database, renaming columns and properties, data migrations, to API changes which involve multiple services.
 
+### A set of practices
+
+- Ensure that services between versions can coexist.
+- Test rolling forward with continuous traffic if you can, since most of the issues happen during a transition.
+- Maintain order of the deployments across multiple services - consumers go before providers during an upgrade and do backward steps during a downgrade.
+
 ## Conclusion
 
-Making changes that are not safe for rolling back from can easily be overlooked, but as long as we plan the phases that need to be taken and mind the order of the deployment of the services, also verify that the services can be safely rolled back and test upgrade and downgrade scenarios, we can make sure our system is reliable and eliminate any disruptions for our customers.
+Making changes that are not safe for rolling back from can easily be overlooked, but as long as we plan the phases that need to be taken and mind the order of the deployment of the services, also verify that the services can be safely rolled back and test upgrade and downgrade scenarios, we can make sure our system is reliable and eliminate any disruptions.
