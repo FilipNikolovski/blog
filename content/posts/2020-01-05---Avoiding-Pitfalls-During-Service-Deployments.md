@@ -10,6 +10,9 @@ tags:
   - DevOps
   - Kubernetes
   - Deployments
+redirect_from:
+  - /avoiding-pitfalls-during-service-deployments/
+
 ---
 
 Nowadays deploying software on the cloud using technologies like Docker and a container orchestration system (k8s, ECS, docker swarm, etc.), has become effortless, leveraging strategies like "rolling updates" and "canary releases" which are practically included and require no additional undertaking. While this ensures that we can release our software with zero-downtime to our customers, what happens when we introduce a change in the system that we cannot go back from?

@@ -10,6 +10,9 @@ tags:
   - Tests
 description: Different methods of separating tests in Go projects.
 socialImage: ''
+redirect_from:
+  - /separating-tests-in-go/
+
 ---
 
 There are many different types of testing which you can do in order to ensure that your software is working correctly. These tests can

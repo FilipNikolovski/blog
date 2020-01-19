@@ -204,5 +204,7 @@ module.exports = {
     },
     'gatsby-plugin-flow',
     'gatsby-plugin-optimize-svgs',
+    'gatsby-redirect-from',
+    'gatsby-plugin-meta-redirect'
   ]
 };
