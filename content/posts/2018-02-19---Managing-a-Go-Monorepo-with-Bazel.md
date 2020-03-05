@@ -12,7 +12,6 @@ tags:
 description: Manage a Go monorepo using Bazel - blazingly fast build tool by Google.
 redirect_from:
   - /managing-go-monorepo-with-bazel/
-
 ---
 
 At [InPlayer](https://inplayer.com/), we have a platform that is built using a *microservice* architectural style which basically structures an application as a collection of many different services. In this post I will talk about how we structure, build and deploy our Go applications.

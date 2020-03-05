@@ -42,7 +42,7 @@
     "classnames": "^2.2.6",
     "codecov": "^3.6.1",
     "gatsby": "^2.19.1",
-    "gatsby-cli": "^2.8.27",
+    "gatsby-cli": "^2.10.0",
     "gatsby-link": "^2.2.27",
     "gatsby-plugin-catch-links": "^2.1.21",
     "gatsby-plugin-feed": "^2.3.26",
@@ -85,8 +85,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/core": "7.8.3",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/plugin-proposal-optional-chaining": "7.8.3",
     "@babel/plugin-transform-flow-strip-types": "^7.7.4",
     "@babel/preset-env": "7.8.3",

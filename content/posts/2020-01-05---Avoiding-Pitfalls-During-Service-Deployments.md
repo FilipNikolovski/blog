@@ -12,7 +12,6 @@ tags:
   - Deployments
 redirect_from:
   - /avoiding-pitfalls-during-service-deployments/
-
 ---
 
 Nowadays deploying software on the cloud using technologies like Docker and a container orchestration system (k8s, ECS, docker swarm, etc.), has become effortless, leveraging strategies like "rolling updates" and "canary releases" which are practically included and require no additional undertaking. While this ensures that we can release our software with zero-downtime to our customers, what happens when we introduce a change in the system that we cannot go back from?
@@ -34,14 +33,6 @@ Deployment of such an architecture can present additional challenges. Services m
 Furthermore, **monorepos** have become an increasingly popular software development strategy, where code for many (or all) projects, resides in the same repository which in turn has made code refactoring much easier due to the code being in one big repository and has enabled engineers to make cross-cutting changes in multiple services in a single commit. This can lead to a misconception of believing that these changes are atomic, similar to making changes in a monolithic application.
 
 Making changes in multiple services at once does not mean you get to deploy those services in the same time as one single unit, and can break the behavior of your system during the transition from one version to the other. 
-
- |
----|---
-<img src="/media/services_versions_1.png" alt="services v1" width=400/>|<img src="/media/services_versions_2.png" width=400/>
-
-Instead of the scenario above, we should let the caller services choose the version they want to depend on and gradually introduce new changes:
-
-<img src="/media/services_versions_3.png" alt="services v3" width=450 />
 
 ## Two-step deployment strategy
 
