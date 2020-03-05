@@ -14,7 +14,7 @@ tags:
   - Gitlab
 ---
 
-Lately I've been obsessing with the performance of Bazel in our CI environment. We've been using this tool for quite some time now for our Golang monorepo and since the beginning of its creation it has grown quite a lot, so we've hit a couple of road blocks with our setup. We're using [Gitlab CI](https://docs.gitlab.com/ee/ci/) as our continuous integration environment and we host the runners on our own AWS instances.
+Lately I've been obsessing with the performance of [Bazel](https://bazel.build/) in our CI environment. We've been using this tool for quite some time now for our Golang monorepo and since the beginning of its creation it has grown quite a lot, so we've hit a couple of road blocks with our setup. We're using [Gitlab CI](https://docs.gitlab.com/ee/ci/) as our continuous integration environment and we host the runners on our own AWS instances.
 
 As a first setup, we we're using the [docker executor](https://docs.gitlab.com/runner/executors/docker.html) and we had an image that had all the necessary tools to run our tasks, including Bazel of course.
 As our repository grew larger, our build times we're starting to become greater and greater and I've searched high and low on the internet for a solution but to no avail.
@@ -54,7 +54,11 @@ And the caches are kept in another directory:
 
 The idea at first was for the runner to copy the cache folder in the project, let Bazel do it's thing and then copy the contents back, which should be faster than syncing the files on S3. With this approach we may have shaved 1 or 2mins from each job, but it wasn't enough.
 
-I started searching the Gitlab CI's documentation again, and realized that we can utilize the [`GIT_CLEAN_FLAGS`](https://docs.gitlab.com/ee/ci/large_repositories/#git-clean-flags) variable, which was introduced in the 11.10 version. This gives us the capabilities of controlling which folders `git` can exclude from removal between **subsequent runs**. This is perfect for our use case, since we have existing directories that we **re-use** for our builds.
+I started searching the Gitlab CI's documentation again, and realized that we can utilize the [`GIT_CLEAN_FLAGS`](https://docs.gitlab.com/ee/ci/large_repositories/#git-clean-flags) variable, which was introduced in the 11.10 version.
+
+Before running a job, the runner first performs a `git clean`, which cleans the build directory of any files and folders that were created during the previous run. The `GIT_CLEAN_FLAGS` variable gives us the capabilities of controlling which folders `git` can exclude from removal between **subsequent runs**. This is perfect for our use case, since we have existing directories that we **re-use** for our builds.
+
+I ended up avoiding the cache mechanism from Gitlab, and created a cache directory **inside** the build directory instead, which survived consecutive jobs. This way Bazel can keep using the cache while not having to transfer it back and forth between the two folders, which drastically saves time.
 
 The final gitlab-ci.yaml file looked something like this:
 
@@ -71,7 +75,8 @@ And it was a great success! We managed to decrease our build times from 20mins t
 ### TL;DR
 
 - Use a **shell** executor and a long-running instance in order to re-use the build directories.
-- Don't use the cache feature.
+- Use the Bazel `--disk-cache` flag to specify a cache directory inside the project's build directory.
+- Don't use the cache mechanism from Gitlab.
 - Utilize the `GIT_CLEAN_FLAGS` variable, so that when running `git clean` on subsequent runs, it will ignore the cache directory.
 - Profit.
 
