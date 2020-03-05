@@ -10,6 +10,7 @@ tags:
   - Monorepo
   - Bazel
 description: Manage a Go monorepo using Bazel - blazingly fast build tool by Google.
+socialImage: ''
 redirect_from:
   - /managing-go-monorepo-with-bazel/
 ---

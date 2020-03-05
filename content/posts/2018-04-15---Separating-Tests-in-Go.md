@@ -9,6 +9,7 @@ tags:
   - Go
   - Tests
 description: Different methods of separating tests in Go projects.
+socialImage: ''
 redirect_from:
   - /separating-tests-in-go/
 ---

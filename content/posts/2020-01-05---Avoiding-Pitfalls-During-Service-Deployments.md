@@ -6,6 +6,7 @@ description: Method of safely handling deployments and rollback of services.
 template: post
 draft: false
 category: DevOps
+socialImage: ''
 tags:
   - DevOps
   - Kubernetes

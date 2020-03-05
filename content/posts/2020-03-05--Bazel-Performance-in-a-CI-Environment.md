@@ -6,6 +6,7 @@ description: Speeding up Bazel builds in Gitlab CI.
 template: post
 draft: false
 category: DevOps
+socialImage: ''
 tags:
   - Bazel
   - Monorepo
