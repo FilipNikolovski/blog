@@ -7033,10 +7033,10 @@ gatsby-redirect-from@^0.2.1:
   resolved "https://registry.yarnpkg.com/gatsby-redirect-from/-/gatsby-redirect-from-0.2.1.tgz#d5041f8730348d4652f1a8a752bca1cf7e86bc75"
   integrity sha512-GLDM1hwOaeh95QFibTMuZORxXUrDXbSX+JOGjLDldDNC2KD8uILO0MNnwqf2UOXytD+5eTHaJAGLNiUjvWOKaw==
 
-gatsby-remark-autolink-headers@^2.1.23:
-  version "2.1.23"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-2.1.23.tgz#6bdb055af628ae82159524afd7dd758fd9f79add"
-  integrity sha512-OXZi/XlA8o0NmZLkPoMqM03cXNIymugCRfuqpZxZTXqGObjjbYb+YbxLVSbogbJAVJdjw2xVEjYMG1ca0YMS1w==
+gatsby-remark-autolink-headers@^2.1.25:
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-2.1.25.tgz#420b7a6ed03da9b515732f6a554770df9f8f2903"
+  integrity sha512-E8L+3Ub49/v8K5jOcaHmjul0vG50EQdqGFVKrmspEJrHhgDkSascayAtiCdpMbxIPEnuRP35nnu2dYqGaaxSIw==
   dependencies:
     "@babel/runtime" "^7.7.6"
     github-slugger "^1.2.1"
