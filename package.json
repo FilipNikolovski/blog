@@ -43,7 +43,7 @@
     "gatsby": "^2.19.29",
     "codecov": "^3.6.5",
     "gatsby-cli": "^2.10.0",
-    "gatsby-link": "^2.2.27",
+    "gatsby-link": "^2.4.6",
     "gatsby-plugin-catch-links": "^2.1.21",
     "gatsby-plugin-feed": "^2.3.26",
     "gatsby-plugin-flow": "^1.1.17",
